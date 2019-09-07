@@ -1,0 +1,24 @@
+{
+  "name": "the-curator",
+  "version": "0.1.0",
+  "description": "A keeper of knowledge",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "test": "node test.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Augumat/the-curator.git"
+  },
+  "keywords": [
+    "discord",
+    "bot"
+  ],
+  "author": "Augumat",
+  "license": "GPL-3.0",
+  "bugs": {
+    "url": "https://github.com/Augumat/the-curator/issues"
+  },
+  "homepage": "https://github.com/Augumat/the-curator#readme"
+}
