@@ -21,6 +21,7 @@ function onMessage(msg)
         if (args[0] === '!addEmote') {
             if (args.length != 3) {
                 msg.reply('Correct usage is `!addEmote <name> <link>`');
+                return;
             }
             msg.guild.createEmoji(args[2], args[1])
                 .then(emoji => {
@@ -32,6 +33,7 @@ function onMessage(msg)
         } else if (args[0] === '!react') {
             if (!(args.length == 2 || args.length == 3)) {
                 msg.reply('Correct usage is `!react <emote>` or `!react <emote> <messageLink>`');
+                return;
             }
             if (args.length == 2) {
                 msg.channel.fetchMessages({ limit: 2 })
@@ -54,8 +56,19 @@ function onMessage(msg)
                 } catch (err) {
                     console.log(err);
                 }
+
             }
-            msg.delete();
+        } else if (args[0] === '!emote') {
+            if (args.length != 2) {
+                msg.reply('Correct usage is `!emote <name>`');
+                return;
+            }
+            // let tempEmote = ;
+            msg.reply(
+                '<' + ((bot.emojis.find(emoji => emoji.name === args[1]).animated) ? "a:" : ":") +
+                bot.emojis.find(emoji => emoji.name === args[1]).identifier +
+                '>'
+            ).then(() => msg.delete());
         }
     //}
 }
