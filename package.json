@@ -2,9 +2,13 @@
   "name": "the-curator",
   "version": "0.1.0",
   "description": "A keeper of knowledge",
-  "main": "index.js",
+  "main": "brain.js",
   "scripts": {
+<<<<<<< HEAD
     "start": "node index.js",
+=======
+    "start": "node brain.js",
+>>>>>>> 55701f59a87c9aafff0a828cefe93b098902cf7b
     "snake-oil": "node snakeOil.js",
     "test": "node test.js"
   },
