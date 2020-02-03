@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "node index.js",
+    "snake-oil": "node snakeOil.js",
     "test": "node test.js"
   },
   "repository": {
