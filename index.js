@@ -28,6 +28,7 @@ function onMessage(msg)
                     console.log(`Created new emote with name ${emoji.name}`);
                     msg.reply(`Created new emote with name ${emoji.name}`);
                 })
+                .then(() => msg.delete())
                 .catch(console.error);
 
         } else if (args[0] === '!react') {
@@ -64,11 +65,15 @@ function onMessage(msg)
                 return;
             }
             // let tempEmote = ;
-            msg.reply(
-                '<' + ((bot.emojis.find(emoji => emoji.name === args[1]).animated) ? "a:" : ":") +
-                bot.emojis.find(emoji => emoji.name === args[1]).identifier +
-                '>'
-            ).then(() => msg.delete());
+            try {
+                msg.channel.send(
+                    '<' + ((bot.emojis.find(emoji => emoji.name === args[1]).animated) ? "a:" : ":") +
+                    bot.emojis.find(emoji => emoji.name === args[1]).identifier +
+                    '>'
+                ).then(() => msg.delete());
+            } catch (err) {
+                console.log(err);
+            }
         }
     //}
 }
